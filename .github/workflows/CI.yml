@@ -8,8 +8,7 @@ name: CI
 on:
   push:
     branches:
-      - main
-      - master
+      - win_arm64
     tags:
       - '*'
   pull_request:
@@ -94,6 +93,8 @@ jobs:
             target: x64
           - runner: windows-latest
             target: x86
+          - runner: windows-11-arm
+            target: arm64
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
